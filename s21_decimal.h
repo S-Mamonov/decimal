@@ -28,8 +28,8 @@ typedef enum {
 //int s21_mul(s21_decimal value_1, s21_decimal value_2, s21_decimal *result) 55
 //int s21_div(s21_decimal value_1, s21_decimal value_2, s21_decimal *result) 90
 
-//<	int s21_is_less(s21_decimal, s21_decimal) 			    24
-//<=	int s21_is_less_or_equal(s21_decimal, s21_decimal)		19
+int s21_is_less(s21_decimal, s21_decimal);
+int s21_is_less_or_equal(s21_decimal, s21_decimal);
 int s21_is_greater(s21_decimal, s21_decimal);
 int s21_is_greater_or_equal(s21_decimal, s21_decimal);
 int s21_is_equal(s21_decimal, s21_decimal);

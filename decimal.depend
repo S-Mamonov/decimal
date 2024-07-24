@@ -2,13 +2,13 @@
 1721742066 source:c:\codeblock\decimal\s21_help_functions.c
 	"s21_decimal.h"
 
-1721753096 c:\codeblock\decimal\s21_decimal.h
+1721808384 c:\codeblock\decimal\s21_decimal.h
 	<stdint.h>
 
 1721627301 source:c:\codeblock\decimal\s21_negate.c
 	"s21_decimal.h"
 
-1721746294 source:c:\codeblock\decimal\main.c
+1721808061 source:c:\codeblock\decimal\main.c
 	<stdio.h>
 	<stdint.h>
 	"s21_decimal.h"
@@ -23,5 +23,11 @@
 	"s21_decimal.h"
 
 1721752810 source:c:\codeblock\decimal\s21_is_not_equal.c
+	"s21_decimal.h"
+
+1721807942 source:c:\codeblock\decimal\s21_is_less.c
+	"s21_decimal.h"
+
+1721808356 source:c:\codeblock\decimal\s21_is_less_or_equal.c
 	"s21_decimal.h"
 

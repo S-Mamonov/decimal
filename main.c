@@ -32,6 +32,7 @@ int main()
     show_decimal(test2);
 
     printf("IS GREATer or eq %d\n", s21_is_greater_or_equal(test1, test2));
+    printf("IS LESS or eq %d\n", s21_is_less_or_equal(test1, test2));
 
 //    decimal_to_big_decimal(test1, &xx);
 //    decimal_to_big_decimal(test2, &yy);
