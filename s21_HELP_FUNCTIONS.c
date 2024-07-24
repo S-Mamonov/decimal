@@ -1,5 +1,10 @@
 #include "s21_decimal.h"
 
+void clear_s21_decimal(s21_decimal *val){
+    for (int i = 0; i < 4; i++)
+        val->bits[i] = 0;
+}
+
 int is_zerro(s21_decimal value){
     int res = value.bits[2] || value.bits[1] || value.bits[0];
 

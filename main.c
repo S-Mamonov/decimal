@@ -25,6 +25,8 @@ int main()
     s21_decimal test2 = {1300, 0, 0, 9 << 16};
     big_decimal xx;
     big_decimal yy;
+
+//s21_from_int_to_decimal(7, &test1);
 //set_minus(&test1);
 //set_minus(&test2);
     show_decimal(test1);
