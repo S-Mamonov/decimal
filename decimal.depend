@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1721742066 source:c:\codeblock\decimal\s21_help_functions.c
+	"s21_decimal.h"
+
+1721753096 c:\codeblock\decimal\s21_decimal.h
+	<stdint.h>
+
+1721627301 source:c:\codeblock\decimal\s21_negate.c
+	"s21_decimal.h"
+
+1721746294 source:c:\codeblock\decimal\main.c
+	<stdio.h>
+	<stdint.h>
+	"s21_decimal.h"
+
+1721742280 source:c:\codeblock\decimal\s21_is_equal.c
+	"s21_decimal.h"
+
+1721752406 source:c:\codeblock\decimal\s21_is_greater.c
+	"s21_decimal.h"
+
+1721753018 source:c:\codeblock\decimal\s21_is_greater_or_equal.c
+	"s21_decimal.h"
+
+1721752810 source:c:\codeblock\decimal\s21_is_not_equal.c
+	"s21_decimal.h"
+
