@@ -8,7 +8,7 @@
 1721627301 source:c:\codeblock\decimal\s21_negate.c
 	"s21_decimal.h"
 
-1721813194 source:c:\codeblock\decimal\main.c
+1721813342 source:c:\codeblock\decimal\main.c
 	<stdio.h>
 	<stdint.h>
 	"s21_decimal.h"
