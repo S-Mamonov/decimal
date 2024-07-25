@@ -21,11 +21,12 @@ void show_big(big_decimal val){
 
 int main()
 {
-    s21_decimal test1 = {13, 0, 0, 7 << 16};
-    s21_decimal test2 = {1300, 0, 0, 9 << 16};
+    s21_decimal test1 = {14, 0, 0, 7 << 16};
+    s21_decimal test2 = {1302, 0, 0, 9 << 16};
 //    s21_decimal test1 = {0xffffffff, 0, 0, 9 << 16};
 //    s21_decimal test2 = {0xffffffff, 0, 0, 9 << 16};
 set_minus(&test1);
+set_minus(&test2);
     puts("is mantis equal?");
     printf("eq? = %d\n", is_mantis_equal(test1, test2));
 
@@ -55,7 +56,7 @@ set_minus(&test1);
 
     s21_add(test1, test2, &rr);
     show_decimal(rr);
-    printf("scale = %d\n", rr.bits[3] >> 16);
+    printf("scale = %d\n", (rr.bits[3] & SC) >> 16);
     printf("rr = %d\n", rr.bits[0]);
 //    decimal_to_big_decimal(test1, &xx);
 //    decimal_to_big_decimal(test2, &yy);
