@@ -1,11 +1,11 @@
 #include "s21_decimal.h"
 
 void clear_s21_decimal(s21_decimal *val){
-    for (int i = 0; i < 4; i++)
-        val->bits[i] = 0;
+    s21_decimal tmp = {0};
+    *val = tmp;
 }
 
-int is_zerro(s21_decimal value){
+int is_zero(s21_decimal value){
     int res = value.bits[2] || value.bits[1] || value.bits[0];
 
     return res == 0;
@@ -24,14 +24,20 @@ void set_plus(s21_decimal* value){
 }
 
 void decimal_to_big_decimal(s21_decimal value, big_decimal *res){
-    for (int i = 0; i < 7; i++){
-        if (i < 3){
-            res->bits[i] = value.bits[i];
-        }
-        else
-            res->bits[i] = 0;
-    }
-    res->scale = (value.bits[3] & SC) >> 16;
+    big_decimal tmp = {0};
+
+    for (int i = 0; i < 3; i++)
+        tmp.bits[i] = value.bits[i] & MAX4BYTE;
+
+    tmp.scale = (value.bits[3] & SC) >> 16;
+
+    *res = tmp;
+}
+
+void big_decimal_to_decimal(big_decimal value, s21_decimal *res){
+    for (int i = 0; i < 3; i++)
+        res->bits[i] = value.bits[i];
+    res->bits[3] = value.scale << 16;
 }
 
 int getoverflow(big_decimal *value){
@@ -42,7 +48,7 @@ int getoverflow(big_decimal *value){
         overflow = value->bits[i] >> 32;
         value->bits[i] &= MAX4BYTE;
     }
-    return overflow; //если 0, то всё успешно, иначе мегапереполнение.
+    return overflow; //if 0, it's ok, else mega overflow.
 }
 
 int scale_up(big_decimal *value){
@@ -57,20 +63,20 @@ int scale_up(big_decimal *value){
         *value = tmp;
         value->scale++;
     }
-    return res; //если 0, то всё успешно, иначе мегапереполнение.
+    return res; //if 0, it's ok, else mega overflow.
 }
 
 uint64_t scale_down(big_decimal *value){
-    uint64_t reminder = 0;
+    uint64_t remainder = 0;
 
     for (int i = 6; i > -1; i--){
-        value->bits[i] += reminder << 32;
-        reminder = value->bits[i] % 10;
+        value->bits[i] += remainder << 32;
+        remainder = value->bits[i] % 10;
         value->bits[i] /= 10;
     }
     value->scale--;
 
-    return reminder; //возможно стоит добавить округление прямо в функции
+    return remainder; //возможно стоит добавить округление прямо в функции
 }
 
 void to_same_scale(big_decimal *val1, big_decimal *val2){

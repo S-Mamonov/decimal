@@ -3,9 +3,9 @@
 int s21_is_greater(s21_decimal val1, s21_decimal val2){
     int res = 0;
 
-    if (is_zerro(val1))
+    if (is_zero(val1))
         set_plus(&val1);
-    if (is_zerro(val2))
+    if (is_zero(val2))
         set_plus(&val2);
 
     res = is_mantis_equal(val1, val2);

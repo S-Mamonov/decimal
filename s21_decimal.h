@@ -46,7 +46,7 @@ int s21_from_int_to_decimal(int src, s21_decimal *dst);
 int s21_negate(s21_decimal value, s21_decimal *result);
 
 //help functions
-int is_zerro(s21_decimal value);
+int is_zero(s21_decimal value);
 int is_minus(s21_decimal value);
 void set_minus(s21_decimal* value);
 void set_plus(s21_decimal* value);
