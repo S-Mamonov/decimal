@@ -37,6 +37,9 @@
 		<Unit filename="s21_HELP_FUNCTIONS.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="s21_add.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="s21_decimal.h" />
 		<Unit filename="s21_from_int_to_decimal.c">
 			<Option compilerVar="CC" />
