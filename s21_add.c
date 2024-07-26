@@ -14,7 +14,7 @@ int s21_add(s21_decimal value_1, s21_decimal value_2, s21_decimal *result){
         *result = value_1;
     }
     else{
-        if ((!is_minus(value_1) && !is_minus(value_1)) || (is_minus(value_1) && is_minus(value_1))){
+        if ((!is_minus(value_1) && !is_minus(value_2)) || (is_minus(value_1) && is_minus(value_2))){
             big_decimal tmp;
 
             error = add_mantis(value_1, value_2, &tmp);
@@ -27,10 +27,10 @@ int s21_add(s21_decimal value_1, s21_decimal value_2, s21_decimal *result){
                         set_minus(result);
                 }
                 else
-                    res = is_minus(value_1) ? 1 : 2;
+                    res = is_minus(value_1) ? 2 : 1;
             }
             else
-                res = is_minus(value_1) ? 1 : 2;
+                res = is_minus(value_1) ? 2 : 1;
         }
     }
     return res;
