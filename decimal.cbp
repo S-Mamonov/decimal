@@ -65,6 +65,12 @@
 		<Unit filename="s21_negate.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="s21_round.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="s21_truncate.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

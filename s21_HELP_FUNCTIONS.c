@@ -76,7 +76,7 @@ uint64_t scale_down(big_decimal *value){
     }
     value->scale--;
 
-    return remainder; //возможно стоит добавить округление прямо в функции
+    return remainder;
 }
 
 void to_same_scale(big_decimal *val1, big_decimal *val2){
@@ -131,9 +131,12 @@ int add_mantis(s21_decimal val1, s21_decimal val2, big_decimal *res){
     return getoverflow(res);
 }
 
-int normalization(big_decimal *value){
-    int ostatok;
-    for (int i = 7; i > 2; i--)
-        while(value->bits[i] && value->scale)
-            ostatok = scale_down(value); // дописать
+int normalize(big_decimal *value){
+    int remainder;
+
+    for (int i = 6; i > 2; i--)
+        while((value->bits[i] && value->scale) || value->scale > 28)
+            remainder = scale_down(value); // TODO
+
+    return 68;
 }
