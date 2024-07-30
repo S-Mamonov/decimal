@@ -132,11 +132,43 @@ int add_mantis(s21_decimal val1, s21_decimal val2, big_decimal *res){
 }
 
 int normalize(big_decimal *value){
-    int remainder;
+    int remainder, error = 0, cnt = 0;
 
     for (int i = 6; i > 2; i--)
-        while((value->bits[i] && value->scale) || value->scale > 28)
-            remainder = scale_down(value); // TODO
+        while((value->bits[i] && value->scale) || value->scale > 28){
+            remainder = scale_down(value);
 
-    return 68;
+            if (remainder)
+                cnt++;
+        }
+
+    if(value->scale == 0)
+        for (int i = 6; !error, i > 2; i--)
+            if (value->bits[i])
+                error = 1;
+
+    if (!error && remainder > 5){
+        value->bits[0] += 1;
+        getoverflow(value);
+        if(value->bits[3]){
+            if (value->scale){
+                remainder = scale_down(value);
+                if (remainder > 5)
+                    value->bits[0] += 1;
+                else if (remainder == 5)
+                    if(value->bits[0] & 1)
+                        value->bits[0] += 1;
+            }
+            else
+                error = 1;
+        }
+    }
+    else if (!error && remainder == 5){
+        if (cnt > 1)
+            value->bits[0] += 1;
+        else
+            if(value->bits[0] & 1)
+                value->bits[0] += 1;
+    }
+    return error;
 }
