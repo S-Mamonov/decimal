@@ -151,7 +151,7 @@ int normalize(big_decimal *value){
         value->bits[0] += 1;
         getoverflow(value);
         if(value->bits[3]){
-            if (value->scale){
+            if (value->scale){ //to another foonc
                 remainder = scale_down(value);
                 if (remainder > 5)
                     value->bits[0] += 1;
@@ -166,9 +166,8 @@ int normalize(big_decimal *value){
     else if (!error && remainder == 5){
         if (cnt > 1)
             value->bits[0] += 1;
-        else
-            if(value->bits[0] & 1)
-                value->bits[0] += 1;
+        else if (value->bits[0] & 1)
+            value->bits[0] += 1;
     }
     return error;
 }

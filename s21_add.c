@@ -1,7 +1,7 @@
 #include "s21_decimal.h"
 
 int s21_add(s21_decimal value_1, s21_decimal value_2, s21_decimal *result){
-    int res = 0;
+    int res = ARITHMETIC_OK;
     int error = 0;
 
     if (is_zero(value_1) && is_zero(value_2)){
@@ -25,7 +25,7 @@ int s21_add(s21_decimal value_1, s21_decimal value_2, s21_decimal *result){
                     set_minus(result);
             }
             else
-                res = is_minus(value_1) ? 2 : 1;
+                res = is_minus(value_1) ? TOO_SMALL : TOO_LARGE;
         }
     }
     return res;
