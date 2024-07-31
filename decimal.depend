@@ -37,21 +37,21 @@
 1721926835 source:c:\codeblock\decimal\s21_add.c
 	"s21_decimal.h"
 
-1722346135 source:/home/forthgui/21-school/decimal/main.c
+1722437573 source:/home/forthgui/21-school/decimal/main.c
 	<stdio.h>
 	<stdint.h>
 	"s21_decimal.h"
 
-1722346135 /home/forthgui/21-school/decimal/s21_decimal.h
+1722434129 /home/forthgui/21-school/decimal/s21_decimal.h
 	<stdint.h>
 
-1722352473 source:/home/forthgui/21-school/decimal/s21_add.c
+1722434129 source:/home/forthgui/21-school/decimal/s21_add.c
 	"s21_decimal.h"
 
 1722346135 source:/home/forthgui/21-school/decimal/s21_from_int_to_decimal.c
 	"s21_decimal.h"
 
-1722352216 source:/home/forthgui/21-school/decimal/s21_HELP_FUNCTIONS.c
+1722434129 source:/home/forthgui/21-school/decimal/s21_HELP_FUNCTIONS.c
 	"s21_decimal.h"
 
 1722346135 source:/home/forthgui/21-school/decimal/s21_is_equal.c
@@ -75,9 +75,12 @@
 1722346135 source:/home/forthgui/21-school/decimal/s21_negate.c
 	"s21_decimal.h"
 
-1722346135 source:/home/forthgui/21-school/decimal/s21_round.c
+1722434129 source:/home/forthgui/21-school/decimal/s21_round.c
 	"s21_decimal.h"
 
-1722346135 source:/home/forthgui/21-school/decimal/s21_truncate.c
+1722434129 source:/home/forthgui/21-school/decimal/s21_truncate.c
+	"s21_decimal.h"
+
+1722437414 source:/home/forthgui/21-school/decimal/s21_floor.c
 	"s21_decimal.h"
 

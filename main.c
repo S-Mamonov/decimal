@@ -27,7 +27,7 @@ int main()
 
     s21_decimal test1 = {0xffffffff, 0xffffffff, 0xffffffff, 9 << 16};
     s21_decimal test2 = {0xffffffff, 0xffffffff, 0xffffffff, 9 << 16};
-    s21_decimal test3 = {1169, 0, 0, 2 << 16};
+    s21_decimal test3 = {0, 0, 0, 2 << 16};
 //set_minus(&test1);
 
     big_decimal xx;
@@ -69,7 +69,7 @@ int main()
     printf("rr = %d\n", rr.bits[0]);
 
     set_minus(&test3);
-    s21_truncate(test3, &test1);
+    s21_floor(test3, &test1);
     show_decimal(test3);
     puts("----");
     show_decimal(test1);
