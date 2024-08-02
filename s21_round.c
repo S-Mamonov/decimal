@@ -14,9 +14,7 @@ int s21_round(s21_decimal value, s21_decimal *result){
 
         for (int i = 0; i < scale; i++){
             remainder = scale_down(&tmp);
-
-            if (remainder)
-                cnt++;
+            if (remainder) cnt++;
         }
         if (remainder > 5){
             tmp.bits[0] += 1;

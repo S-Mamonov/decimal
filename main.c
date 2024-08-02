@@ -21,15 +21,23 @@ void show_big(big_decimal val){
 
 int main()
 {
-//    s21_decimal test1 = {12, 15, 0, 1 << 16};
-//    s21_decimal test2 = {1302, 0, 0, 9 << 16};
+    s21_decimal test1 = {13, 0, 0, 7 << 16};
+    s21_decimal test2 = {1300, 0, 0, 9 << 16};
 //    s21_decimal rez = {1302, 0, 0, 9 << 16};
 
-    s21_decimal test1 = {0xffffffff, 0xffffffff, 0xffffffff, 9 << 16};
-    s21_decimal test2 = {0xffffffff, 0xffffffff, 0xffffffff, 9 << 16};
+//    s21_decimal test1 = {0x00ffffff, 0xffffffff, 0xffffffff, 9 << 16};
+//    s21_decimal test2 = {0xffffffff, 0xffffffff, 0xffffffff, 9 << 16};
     s21_decimal test3 = {0, 0, 0, 2 << 16};
 //set_minus(&test1);
-
+//set_minus(&test2);
+//puts("IS GREATER");
+//int gr = s21_is_greater(test1, test2);
+//printf("greater = %d\n", gr);
+s21_decimal qwe = {2147483648, 0, 0, 0 << 16};
+int ww = -11;
+set_minus(&qwe);
+s21_from_decimal_to_int(qwe, &ww);
+printf("dec2int = %d\n", ww);
     big_decimal xx;
     big_decimal yy;
 
