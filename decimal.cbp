@@ -44,6 +44,9 @@
 		<Unit filename="s21_floor.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="s21_from_decimal_to_float.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="s21_from_decimal_to_int.c">
 			<Option compilerVar="CC" />
 		</Unit>

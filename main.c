@@ -23,16 +23,24 @@ int main()
 {
     s21_decimal test1 = {13, 0, 0, 7 << 16};
     s21_decimal test2 = {1300, 0, 0, 9 << 16};
-//    s21_decimal rez = {1302, 0, 0, 9 << 16};
+    s21_decimal rez = {0b01111111111111111111111111111111, 0, 0, 0 << 16};
 
 //    s21_decimal test1 = {0x00ffffff, 0xffffffff, 0xffffffff, 9 << 16};
 //    s21_decimal test2 = {0xffffffff, 0xffffffff, 0xffffffff, 9 << 16};
     s21_decimal test3 = {0, 0, 0, 2 << 16};
-//set_minus(&test1);
+set_minus(&rez);
 //set_minus(&test2);
 //puts("IS GREATER");
 //int gr = s21_is_greater(test1, test2);
 //printf("greater = %d\n", gr);
+
+float qqq;
+int qaz;
+s21_from_decimal_to_float(rez, &qqq);
+printf("FLOAT = %f\n", qqq);
+s21_from_decimal_to_int(rez, &qaz);
+printf("dec2int = %d\n", qaz);
+
 s21_decimal qwe = {2147483648, 0, 0, 0 << 16};
 int ww = -11;
 set_minus(&qwe);
