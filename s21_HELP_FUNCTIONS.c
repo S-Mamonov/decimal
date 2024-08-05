@@ -116,7 +116,7 @@ int is_mantis_equal(s21_decimal val1, s21_decimal val2){
     return res;
 }
 
-int add_mantis(s21_decimal val1, s21_decimal val2, big_decimal *res){
+void add_mantis(s21_decimal val1, s21_decimal val2, big_decimal *res){
     big_decimal big_val1, big_val2;
 
     decimal_to_big_decimal(val1, &big_val1);
@@ -127,8 +127,6 @@ int add_mantis(s21_decimal val1, s21_decimal val2, big_decimal *res){
     res->scale = big_val1.scale;
     for (int i = 0; i < 7; i++)
         res->bits[i] = big_val1.bits[i] + big_val2.bits[i];
-
-    return getoverflow(res);
 }
 
 int normalize(big_decimal *value){

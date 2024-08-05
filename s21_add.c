@@ -18,6 +18,7 @@ int s21_add(s21_decimal value_1, s21_decimal value_2, s21_decimal *result){
             big_decimal tmp;
 
             add_mantis(value_1, value_2, &tmp);
+            getoverflow(&tmp);
             error = normalize(&tmp);
             if (!error){
                 big_decimal_to_decimal(tmp, result);
