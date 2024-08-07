@@ -129,6 +129,32 @@ void add_mantis(s21_decimal val1, s21_decimal val2, big_decimal *res){
         res->bits[i] = big_val1.bits[i] + big_val2.bits[i];
 }
 
+void sub_mantis(s21_decimal val1, s21_decimal val2, s21_decimal *res){
+    big_decimal big_val1, big_val2, big_tmp;
+
+    if (is_mantis_equal(val1, val2) == -1){
+        s21_decimal tmp = val1;
+        val1 = val2;
+        val2 = tmp;
+    }
+    decimal_to_big_decimal(val1, &big_val1);
+    decimal_to_big_decimal(val2, &big_val2);
+
+    to_same_scale(&big_val1, &big_val2);
+
+    big_tmp.scale = big_val1.scale;
+
+    for (int i = 0; i < 3; i++){
+        if (big_val1.bits[i] < big_val2.bits[i])
+            big_val1.bits[i+1] -= 1;
+        big_tmp.bits[i] = (big_val1.bits[i] - big_val2.bits[i]) & MAX4BYTE;
+    }
+    big_decimal_to_decimal(big_tmp, res);
+
+    if(is_minus(val1))
+        set_minus(res);
+}
+
 int normalize(big_decimal *value){
     int remainder, error = 0, cnt = 0;
 

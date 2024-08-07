@@ -28,6 +28,8 @@ int s21_add(s21_decimal value_1, s21_decimal value_2, s21_decimal *result){
             else
                 res = is_minus(value_1) ? TOO_SMALL : TOO_LARGE;
         }
+        else
+            sub_mantis(value_1, value_2, result);
     }
     return res;
 }

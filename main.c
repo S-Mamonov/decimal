@@ -21,18 +21,26 @@ void show_big(big_decimal val){
 
 int main()
 {
-    s21_decimal test1 = {13, 0, 0, 7 << 16};
-    s21_decimal test2 = {1300, 0, 0, 9 << 16};
+    s21_decimal test1 = {1300, 1300, 0, 9 << 16};
+    s21_decimal test2 = {1303, 1200, 0, 9 << 16};
     s21_decimal rez = {0b01111111111111111111111111111111, 0, 0, 0 << 16};
 
 //    s21_decimal test1 = {0x00ffffff, 0xffffffff, 0xffffffff, 9 << 16};
 //    s21_decimal test2 = {0xffffffff, 0xffffffff, 0xffffffff, 9 << 16};
     s21_decimal test3 = {0, 0, 0, 2 << 16};
-set_minus(&rez);
+//set_minus(&test1);
 //set_minus(&test2);
 //puts("IS GREATER");
 //int gr = s21_is_greater(test1, test2);
 //printf("greater = %d\n", gr);
+show_decimal(test1);
+puts("");
+show_decimal(test2);
+s21_add(test1, test2, &rez);
+puts("TESTING ADD");
+show_decimal(rez);
+printf("%u\n", rez.bits[0]);
+puts("END TESTING ADD");
 
 float qqq;
 int qaz;
