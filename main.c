@@ -29,7 +29,7 @@ int main()
 //    s21_decimal test2 = {0xffffffff, 0xffffffff, 0xffffffff, 9 << 16};
     s21_decimal test3 = {0, 0, 0, 2 << 16};
 //set_minus(&test1);
-//set_minus(&test2);
+set_minus(&test2);
 //puts("IS GREATER");
 //int gr = s21_is_greater(test1, test2);
 //printf("greater = %d\n", gr);

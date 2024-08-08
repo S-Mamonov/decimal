@@ -77,6 +77,9 @@
 		<Unit filename="s21_round.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="s21_sub.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="s21_truncate.c">
 			<Option compilerVar="CC" />
 		</Unit>
