@@ -3,7 +3,7 @@
 int s21_from_int_to_decimal(int src, s21_decimal *dst){
     int res = 0;
 
-    if (dst != NULL){
+    if (dst){
         if (src < 0){
             set_minus(dst);
             src = -src;

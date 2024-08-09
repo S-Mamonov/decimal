@@ -2,7 +2,7 @@
 
 int s21_truncate(s21_decimal value, s21_decimal *result){
     big_decimal tmp;
-    int scale = (value.bits[3] & SC) >> 16;;
+    int scale = (value.bits[3] & SC) >> 16;
 
     if (scale == 0){
         *result = value;

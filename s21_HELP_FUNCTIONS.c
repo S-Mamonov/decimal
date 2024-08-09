@@ -155,6 +155,18 @@ void sub_mantis(s21_decimal val1, s21_decimal val2, s21_decimal *res){
         set_minus(res);
 }
 
+void mul_mantis(s21_decimal val1, s21_decimal val2, big_decimal *tmp){
+    int scale_val1 = (val1.bits[3] & SC) >> 16;
+    int scale_val2 = (val2.bits[3] & SC) >> 16;
+
+    tmp->bits[0] = val1.bits[0] * val2.bits[0];
+    tmp->bits[1] = val1.bits[1] * val2.bits[0] + val1.bits[0] * val2.bits[1];
+    tmp->bits[2] = val1.bits[0] * val2.bits[2] + val1.bits[1] * val2.bits[1] + val1.bits[2] * val2.bits[0];
+    tmp->bits[3] = val1.bits[1] * val2.bits[2] + val1.bits[2] *val2.bits[1];
+    tmp->bits[4] = val1.bits[2] * val2.bits[2];
+    tmp->scale = scale_val1 + scale_val2;
+}
+
 int normalize(big_decimal *value){
     int remainder, error = 0, cnt = 0;
 

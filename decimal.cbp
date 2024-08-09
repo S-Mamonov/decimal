@@ -71,6 +71,9 @@
 		<Unit filename="s21_is_not_equal.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="s21_mul.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="s21_negate.c">
 			<Option compilerVar="CC" />
 		</Unit>
